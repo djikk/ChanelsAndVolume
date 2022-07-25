@@ -19,6 +19,20 @@ public class RadioTest {
 
     @Test
 
+    public void chanelUpFrom8To9() {
+        Radio radio = new Radio();
+        radio.setCurrentChanel(8);
+
+        radio.nextChanel();
+
+        int actual = radio.getCurrentChanel();
+        int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
     public void chanelDown() {
         Radio radio = new Radio();
         radio.setCurrentChanel(0);
@@ -27,6 +41,20 @@ public class RadioTest {
 
         int actual = radio.getCurrentChanel();
         int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    public void chanelDownFrom9To8() {
+        Radio radio = new Radio();
+        radio.setCurrentChanel(9);
+
+        radio.previousChanel();
+
+        int actual = radio.getCurrentChanel();
+        int expected = 8;
 
         assertEquals(expected, actual);
     }
@@ -47,6 +75,19 @@ public class RadioTest {
 
     @Test
 
+    public void volumeUpFrom9To10() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(9);
+
+        radio.nextVolume();
+
+        int actual = radio.getCurrentVolume();
+        int expected = 10;
+
+        assertEquals(expected, actual);
+    }
+    @Test
+
     public void volumeDown() {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
@@ -57,5 +98,21 @@ public class RadioTest {
         int expected = 0;
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+
+    public void volumeDownFrom10To9() {
+
+            Radio radio = new Radio();
+            radio.setCurrentVolume(10);
+
+            radio.previousVolume();
+
+            int actual = radio.getCurrentVolume();
+            int expected = 9;
+
+            assertEquals(expected, actual);
+
     }
 }
