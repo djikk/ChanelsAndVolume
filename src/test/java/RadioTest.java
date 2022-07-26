@@ -3,6 +3,39 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
+
+    @Test
+
+    public void unrealChanelAndVolumeMoreThanMax() {
+        Radio radio = new Radio(10,11);
+
+        radio.setCurrentChanel(10);
+
+        radio.setCurrentVolume(11);
+
+        int actual = radio.getCurrentChanel();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    public void unrealChanelAndVolumeLessThanMin() {
+        Radio radio = new Radio(10,11);
+
+        radio.setCurrentChanel(-1);
+
+        radio.setCurrentVolume(-1);
+
+        int actual = radio.getCurrentChanel();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+
+
     @Test
 
     public void chanelUp() {
@@ -16,6 +49,8 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
+
+
 
     @Test
 
